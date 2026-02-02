@@ -1,0 +1,52 @@
+# Исключаем всё, что не нужно в Docker-контейнере
+node_modules
+.next
+out
+dist
+build
+coverage
+.turbo
+.swc
+
+# Git и метаданные
+.git
+.gitignore
+.dockerignore
+.github
+
+# IDE / редакторы
+.idea
+.vscode
+*.log
+*.tmp
+*.swp
+*.swo
+
+# env-файлы (в Docker лучше передавать через переменные окружения / secrets)
+# Но оставляем примеры для справки
+.env
+.env.local
+.env.*
+!.env.example
+
+# локальные данные и загруженные файлы
+data/uploads
+
+# кэш и артефакты
+__pycache__/
+*.py[cod]
+*.pyo
+
+# прочее
+Dockerfile*
+docker-compose*.yml
+!docker-compose.yml
+README.md
+*.md
+!DOCKER_DEPLOY.md
+!LDAP_SETUP.md
+scripts/
+public/placeholder-*.*
+env.bsuir.local.example
+docker-compose.override.yml.example
+
