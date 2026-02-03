@@ -10,8 +10,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Установка зависимостей (включая dev-зависимости, нужные для сборки)
+# Используем npm install с --legacy-peer-deps, чтобы избежать ошибок npm ci внутри контейнера
 COPY package.json package-lock.json* ./
-RUN npm ci --legacy-peer-deps || npm install
+RUN npm install --legacy-peer-deps
 
 
 FROM node:20-bookworm-slim AS builder
